@@ -1,15 +1,13 @@
-// require https module
 var https = require('https'); 
-let finalData = "";                               
+let finalData = ""; 
 
-var requestOptions = {
-    host: 'sytantris.github.io',
-    path: '/http-examples/step4.html'
-  };
+module.exports = function printHTML (html) {
+    console.log(html);
+}
 
-function getHTML (options, callback) {
+module.exports = function getHTML (options, callback) {
   
- // call the GET method of HTTPS module to get the response
+    // call the GET method of HTTPS module to get the response
     https.get(options, function (response) {
 
     // set encoding of received data to UTF-8
@@ -27,9 +25,3 @@ function getHTML (options, callback) {
     });
     
 }
-
-function printHTML (html) {
-    console.log(html);
-}
-
-getHTML(requestOptions, printHTML);
