@@ -1,10 +1,6 @@
 var https = require('https'); 
 let finalData = ""; 
 
-module.exports = function printHTML (html) {
-    console.log(html);
-}
-
 module.exports = function getHTML (options, callback) {
   
     // call the GET method of HTTPS module to get the response
