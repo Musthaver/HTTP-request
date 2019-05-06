@@ -18,8 +18,10 @@ function getAndPrintHTML () {
     
         // the callback is invoked when a `data` chunk is received
         response.on('data', function (data) {
-
             finalData += data;
+        });
+
+        response.on('end', function() {
             console.log(finalData);
         });
     

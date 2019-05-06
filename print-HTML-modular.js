@@ -1,5 +1,6 @@
 // require https module
-var https = require('https');                               
+var https = require('https'); 
+let finalData = "";                               
 
 var requestOptions = {
     host: 'sytantris.github.io',
@@ -16,9 +17,11 @@ function getAndPrintHTML (options) {
     
         // the callback is invoked when a `data` chunk is received
         response.on('data', function (data) {
-            let finalData = "";
             finalData += data;
-            console.log(data);
+        });
+
+        response.on('end', function() {
+            console.log(finalData);
         });
     
     });
