@@ -1,12 +1,13 @@
 // require https module
-var https = require('https');                               
+var https = require('https');   
+let finalData = "";                            
 
 
 function getAndPrintHTML () {
 
     var requestOptions = {
       host: 'sytantris.github.io',
-      path: '/http-examples/step1.html'
+      path: '/http-examples/step2.html'
     };
   
  // call the GET method of HTTPS module to get the response
@@ -17,9 +18,9 @@ function getAndPrintHTML () {
     
         // the callback is invoked when a `data` chunk is received
         response.on('data', function (data) {
-            let finalData = "";
+
             finalData += data;
-            console.log(data);
+            console.log(finalData);
         });
     
     });
