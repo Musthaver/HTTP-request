@@ -11,10 +11,7 @@ var obj1337 = {
     l: '1',
     o: '0',
     s: '5',
-    t: '7',
-    'ck': 'x',
-    'er': '0r',
-    'you': 'j00'
+    t: '7'
 }
 
 function print1337 (html) {
@@ -28,8 +25,10 @@ for (i = 0; i < html.length; i++) {
         finalText += html[i];
     }
 }
+
+finalText = finalText.replace(/y0u/gi, "j00").replace(/3r/gi, "0r").replace(/ck/gi, "x");
 console.log(finalText);
-  
+
 }
-  
+
 getHTML(requestOptions, print1337);
